@@ -4,9 +4,9 @@ import { heroStack, nav } from '../data/content'
 import { useI18n } from '../i18n/I18nProvider'
 import LangSwitch from './LangSwitch'
 import {
-  ArrowRight,
-  ArrowsOutCardinal,
-  SoccerBall,
+  ArrowRightIcon,
+  ArrowsOutCardinalIcon,
+  SoccerBallIcon,
 } from '@phosphor-icons/react'
 
 // Os objetos arremessáveis (bola/controle) moram na página inteira: ver Toys.tsx e App.tsx.
@@ -54,7 +54,7 @@ export default function Hero({ hasInteracted }: { hasInteracted: boolean }) {
 
       <header className="hero__header">
         <a href="#top" className="hero__logo">
-          <SoccerBall
+          <SoccerBallIcon
             size={20}
             weight="fill"
             color="var(--accent)"
@@ -85,10 +85,11 @@ export default function Hero({ hasInteracted }: { hasInteracted: boolean }) {
       </header>
 
       <a href="#contato" className="hero__cta">
-        {t.hero.cta} <ArrowRight size={16} weight="bold" aria-hidden="true" />
+        {t.hero.cta}{' '}
+        <ArrowRightIcon size={16} weight="bold" aria-hidden="true" />
       </a>
       <p className="hero__hint" aria-hidden="true" data-hidden={hasInteracted}>
-        <ArrowsOutCardinal size={16} weight="bold" /> {t.hero.hint}
+        <ArrowsOutCardinalIcon size={16} weight="bold" /> {t.hero.hint}
       </p>
 
       <div className="hero__stackbar">

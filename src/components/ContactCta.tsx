@@ -1,5 +1,5 @@
 import { contact } from '../data/content'
-import { ArrowUpRight } from '@phosphor-icons/react'
+import { ArrowUpRightIcon } from '@phosphor-icons/react'
 import { useI18n } from '../i18n/I18nProvider'
 import RollingText from './RollingText'
 
@@ -25,7 +25,7 @@ export default function ContactCta() {
           >
             <RollingText text={t.contact.button} />
             <span className="cta__button-icon">
-              <ArrowUpRight
+              <ArrowUpRightIcon
                 size={16}
                 weight="bold"
                 color="#FFFFFF"

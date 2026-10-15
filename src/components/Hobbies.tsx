@@ -2,21 +2,21 @@ import { useState } from 'react'
 import { hobbies, type Hobby, type HobbyIcon } from '../data/content'
 import { useI18n } from '../i18n/I18nProvider'
 import {
-  Barbell,
-  BoxingGlove,
-  Code,
-  GameController,
-  SoccerBall,
+  BarbellIcon,
+  BoxingGloveIcon,
+  CodeIcon,
+  GameControllerIcon,
+  SoccerBallIcon,
   type Icon as PhosphorIcon,
 } from '@phosphor-icons/react'
 import { Crest } from './icons'
 
 const ICONS: Record<HobbyIcon, PhosphorIcon> = {
-  ball: SoccerBall,
-  dumbbell: Barbell,
-  gamepad: GameController,
-  glove: BoxingGlove,
-  code: Code,
+  ball: SoccerBallIcon,
+  dumbbell: BarbellIcon,
+  gamepad: GameControllerIcon,
+  glove: BoxingGloveIcon,
+  code: CodeIcon,
 }
 
 function Icon({ name }: { name: HobbyIcon }) {
