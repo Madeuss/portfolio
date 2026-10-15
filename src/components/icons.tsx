@@ -34,3 +34,47 @@ export function MoveIcon({ size = 16 }: { size?: number }) {
     </svg>
   );
 }
+
+// Ícones de linha das cartas de Hobbies (originais, sem marcas).
+type LineIconProps = { size?: number };
+
+export function DumbbellIcon({ size = 48 }: LineIconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 24h16" />
+      <rect x="9" y="14" width="7" height="20" rx="2" />
+      <rect x="32" y="14" width="7" height="20" rx="2" />
+      <path d="M5 19v10M43 19v10" />
+    </svg>
+  );
+}
+
+export function GamepadIcon({ size = 48 }: LineIconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M15 14h18c6 0 9.5 4.5 10.5 11l1.3 8.2c.6 3.8-3.6 6.4-6.7 4.1L32 32H16l-6.1 5.3c-3.1 2.3-7.3-.3-6.7-4.1L4.5 25C5.5 18.5 9 14 15 14z" />
+      <path d="M13 21v7M9.5 24.5h7" />
+      <circle cx="32" cy="22" r="1.2" fill="currentColor" />
+      <circle cx="36" cy="26" r="1.2" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function GloveIcon({ size = 48 }: LineIconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 30V16c0-5 4-9 9-9h5c6 0 10 4 10 10v9c0 4-3 7-7 7H17" />
+      <path d="M14 22h-2.5a3.5 3.5 0 0 0 0 7H14" />
+      <path d="M22 17h10" />
+      <rect x="15" y="33" width="18" height="9" rx="2" />
+    </svg>
+  );
+}
+
+export function CodeIcon({ size = 48 }: LineIconProps) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M16 14L6 24l10 10M32 14l10 10-10 10M27 9l-6 30" />
+    </svg>
+  );
+}
