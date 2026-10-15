@@ -133,16 +133,37 @@ const ACTIONS: Record<HobbyScene, string> = {
   terminal: 'rodar o comando',
 };
 
+// GIF como recompensa do clique: entra depois que a animação termina, fica um tempo e some.
+const GIF_DELAY = 1100;
+const GIF_DURATION = 3200;
+
 function PlayCard({ hobby }: { hobby: Hobby }) {
   const [play, setPlay] = useState(0);
+  const [showGif, setShowGif] = useState(false);
+  const timers = useRef<number[]>([]);
   const Scene = SCENES[hobby.scene];
+
+  useEffect(() => () => timers.current.forEach(clearTimeout), []);
+
+  const handleClick = () => {
+    setPlay((n) => n + 1);
+    if (!hobby.gif) return;
+    timers.current.forEach(clearTimeout);
+    setShowGif(false);
+    const delay = reducedMotion() ? 0 : GIF_DELAY;
+    timers.current = [
+      window.setTimeout(() => setShowGif(true), delay),
+      window.setTimeout(() => setShowGif(false), delay + GIF_DURATION),
+    ];
+  };
 
   return (
     <li>
-      <button type="button" className="play" onClick={() => setPlay((n) => n + 1)} aria-label={`${hobby.name}: ${ACTIONS[hobby.scene]}`}>
+      <button type="button" className="play" onClick={handleClick} aria-label={`${hobby.name}: ${ACTIONS[hobby.scene]}`}>
         <span className="play__stage" data-scene={hobby.scene}>
-          {hobby.gif && <img className="play__gif" src={hobby.gif} alt="" loading="lazy" />}
           <Scene play={play} />
+          {/* só monta o <img> depois do primeiro clique, para não baixar GIFs pesadas no load */}
+          {hobby.gif && play > 0 && <img className="play__gif" src={hobby.gif} alt="" data-show={showGif} />}
           {hobby.crest ? (
             <img className="play__crest" src={hobby.crest} alt="" />
           ) : (

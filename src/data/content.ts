@@ -74,8 +74,8 @@ export const footerLinks = [
 // Hobbies — duas versões da seção, ambas lendo esta lista (escolher uma e apagar a outra):
 //   HobbiesCards → cartas estilo FIFA Ultimate Team (frente: atributos; verso: GIF + frase)
 //   HobbiesPlay  → cards com micro-interação própria (`scene`) ao clicar
-// Atributos são de brincadeira: ajuste à vontade. `gif` é opcional (ex.: '/images/hobby-futebol.gif');
-// sem ele, aparece o placeholder `gifHint`. `crest` = escudo do time (imagem sua; não desenhamos logos).
+// Atributos são de brincadeira: ajuste à vontade. `gif` é opcional; na versão Play ela aparece
+// como recompensa depois do clique. Sem ela, aparece o placeholder `gifHint`. `crest` = escudo do time (imagem sua; não desenhamos logos).
 export type HobbyIcon = 'ball' | 'dumbbell' | 'gamepad' | 'glove' | 'code';
 export type HobbyScene = 'ball' | 'dumbbell' | 'pc' | 'bag' | 'terminal';
 export type Hobby = {
@@ -97,7 +97,8 @@ export const hobbies: Hobby[] = [
     id: 'futebol',
     scene: 'ball',
     gifHint: '[GIF DE GOL / TORCIDA]',
-    // crest: '/images/escudo.png', // TODO: escudo (imagem sua)
+    gif: '/images/soccer_funny_fail.gif',
+    crest: '/images/corinthians_escudo.svg',
     name: 'Futebol',
     pos: 'ATA',
     overall: 88,
@@ -119,6 +120,7 @@ export const hobbies: Hobby[] = [
     id: 'videogame',
     scene: 'pc',
     gifHint: '[GIF DE JOGO]',
+    gif: '/images/videogame.gif',
     name: 'Video game',
     pos: 'PC',
     overall: 87,
