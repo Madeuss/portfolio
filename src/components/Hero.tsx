@@ -71,7 +71,16 @@ export default function Hero({ hasInteracted }: { hasInteracted: boolean }) {
         </nav>
         <div className="hero__meta">
           <LangSwitch />
-          <span className="hero__location">{t.hero.location}</span>
+          <span className="hero__location">
+            {t.hero.location}
+            <img
+              className="hero__flag"
+              src="/images/flag-br.svg"
+              alt=""
+              width={20}
+              height={15}
+            />
+          </span>
         </div>
       </header>
 

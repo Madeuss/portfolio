@@ -221,6 +221,14 @@ img {
   gap: 8px;
   font-weight: 700;
 }
+/* bandeira: flag-icons (lipis/flag-icons, MIT) */
+.hero__flag {
+  display: block;
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(20, 22, 28, 0.08);
+}
 
 .hero__meta {
   display: flex;
