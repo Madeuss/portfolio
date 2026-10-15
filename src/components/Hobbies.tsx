@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { hobbies, type Hobby, type HobbyIcon } from '../data/content';
-import { CodeIcon, DumbbellIcon, GamepadIcon, GloveIcon, SoccerBallIcon } from './icons';
+import { CodeIcon, Crest, DumbbellIcon, GamepadIcon, GloveIcon, SoccerBallIcon } from './icons';
 
 function Icon({ name }: { name: HobbyIcon }) {
   switch (name) {
@@ -19,6 +19,8 @@ function Icon({ name }: { name: HobbyIcon }) {
 
 function HobbyCard({ hobby }: { hobby: Hobby }) {
   const [flipped, setFlipped] = useState(false);
+  // GIFs são pesadas: o <img> só monta depois da primeira virada.
+  const [seen, setSeen] = useState(false);
 
   return (
     <li className="fut">
@@ -28,12 +30,16 @@ function HobbyCard({ hobby }: { hobby: Hobby }) {
         data-flipped={flipped}
         aria-pressed={flipped}
         aria-label={`${hobby.name}: ${flipped ? 'mostrar atributos' : 'virar carta'}`}
-        onClick={() => setFlipped((f) => !f)}
+        onClick={() => {
+          setFlipped((f) => !f);
+          setSeen(true);
+        }}
       >
         <span className="fut__face fut__face--front" aria-hidden={flipped}>
           <span className="fut__top">
             <span className="fut__overall">{hobby.overall}</span>
             <span className="fut__pos">{hobby.pos}</span>
+            {hobby.club && <Crest className="fut__crest" />}
           </span>
           <span className="fut__icon">
             <Icon name={hobby.icon} />
@@ -50,7 +56,7 @@ function HobbyCard({ hobby }: { hobby: Hobby }) {
 
         <span className="fut__face fut__face--back" aria-hidden={!flipped}>
           <span className="fut__media">
-            {hobby.gif ? <img src={hobby.gif} alt="" loading="lazy" /> : <span className="fut__placeholder">[GIF]</span>}
+            {hobby.gif ? seen && <img src={hobby.gif} alt="" /> : <span className="fut__placeholder">[GIF]</span>}
           </span>
           <span className="fut__quote">“{hobby.quote}”</span>
           <span className="fut__back-name">{hobby.name}</span>
@@ -60,9 +66,9 @@ function HobbyCard({ hobby }: { hobby: Hobby }) {
   );
 }
 
-export default function HobbiesCards() {
+export default function Hobbies() {
   return (
-    <section id="hobbies-cartas" className="section">
+    <section id="hobbies" className="section">
       <div className="container">
         <div className="section-head">
           <h2 className="section-title">Fora do código</h2>

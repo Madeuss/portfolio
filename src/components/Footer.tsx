@@ -1,4 +1,5 @@
 import { contact, footerLinks } from '../data/content';
+import { Crest } from './icons';
 import RollingText from './RollingText';
 
 export default function Footer() {
@@ -34,7 +35,10 @@ export default function Footer() {
       </div>
       <div className="container footer__bottom">
         <span>© {new Date().getFullYear()} Mateus Souza</span>
-        <span>Feito com React e muito café</span>
+        <span className="footer__made">
+          Feito com React, muito café e muita raça
+          <Crest />
+        </span>
       </div>
       <div className="footer__giant" aria-hidden="true">
         <span>MATEUS</span>

@@ -71,13 +71,14 @@ export const footerLinks = [
   { label: 'Contato', href: '#contato' },
 ];
 
-// Hobbies — duas versões da seção, ambas lendo esta lista (escolher uma e apagar a outra):
-//   HobbiesCards → cartas estilo FIFA Ultimate Team (frente: atributos; verso: GIF + frase)
-//   HobbiesPlay  → cards com micro-interação própria (`scene`) ao clicar
-// Atributos são de brincadeira: ajuste à vontade. `gif` é opcional; na versão Play ela aparece
-// como recompensa depois do clique. Sem ela, aparece o placeholder `gifHint`. `crest` = escudo do time (imagem sua; não desenhamos logos).
+// Escudo do time do coração (imagem do Mat; não desenhamos logos). SVG monocromático,
+// usado como máscara CSS para herdar a cor do contexto (ver componente Crest).
+export const crest = '/images/corinthians_escudo.svg';
+
+// Hobbies — cartas estilo FIFA Ultimate Team (frente: atributos; verso: GIF + frase).
+// Atributos são de brincadeira: ajuste à vontade. `gif` só é baixada quando a carta vira.
+// TODO: aceitar várias GIFs por hobby e sortear uma (por acesso ou a cada virada).
 export type HobbyIcon = 'ball' | 'dumbbell' | 'gamepad' | 'glove' | 'code';
-export type HobbyScene = 'ball' | 'dumbbell' | 'pc' | 'bag' | 'terminal';
 export type Hobby = {
   id: string;
   name: string;
@@ -85,20 +86,16 @@ export type Hobby = {
   overall: number;
   icon: HobbyIcon;
   attrs: [string, number][];
-  scene: HobbyScene;
   quote: string; // TODO: frases são sugestões, troque pelas suas
   gif?: string;
-  gifHint?: string;
-  crest?: string;
+  club?: boolean; // mostra o escudo na frente da carta, como o clube nas cartas do FUT
 };
 
 export const hobbies: Hobby[] = [
   {
     id: 'futebol',
-    scene: 'ball',
-    gifHint: '[GIF DE GOL / TORCIDA]',
     gif: '/images/soccer_funny_fail.gif',
-    crest: '/images/corinthians_escudo.svg',
+    club: true,
     name: 'Futebol',
     pos: 'ATA',
     overall: 88,
@@ -108,7 +105,7 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 'academia',
-    scene: 'dumbbell',
+    gif: '/images/gym.gif',
     name: 'Academia',
     pos: 'MUS',
     overall: 84,
@@ -118,9 +115,7 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 'videogame',
-    scene: 'pc',
-    gifHint: '[GIF DE JOGO]',
-    gif: '/images/videogame.gif',
+    gif: '/images/game_01.gif',
     name: 'Video game',
     pos: 'PC',
     overall: 87,
@@ -130,7 +125,7 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 'muaythai',
-    scene: 'bag',
+    gif: '/images/muay_thai_02.gif',
     name: 'Muay Thai',
     pos: 'LUT',
     overall: 82,
@@ -140,7 +135,7 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 'programar',
-    scene: 'terminal',
+    gif: '/images/programming.gif',
     name: 'Programar',
     pos: 'DEV',
     overall: 91,

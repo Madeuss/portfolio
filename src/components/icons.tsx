@@ -1,3 +1,6 @@
+import type { CSSProperties } from 'react';
+import { crest } from '../data/content';
+
 // Ícones inline. SoccerBallIcon = Phosphor Icons "soccer-ball-fill" (licença MIT).
 // Se preferir a lib: npm i @phosphor-icons/react → <SoccerBall weight="fill" />
 
@@ -77,4 +80,9 @@ export function CodeIcon({ size = 48 }: LineIconProps) {
       <path d="M16 14L6 24l10 10M32 14l10 10-10 10M27 9l-6 30" />
     </svg>
   );
+}
+
+// Escudo do time (imagem do Mat). Renderizado como máscara: a cor vem de `color` no CSS.
+export function Crest({ className = '' }: { className?: string }) {
+  return <span className={`crest ${className}`} role="img" aria-label="Escudo do Corinthians" style={{ '--crest-url': `url(${crest})` } as CSSProperties} />;
 }
