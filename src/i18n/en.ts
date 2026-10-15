@@ -13,6 +13,7 @@ const en: Dictionary = {
     about: 'About',
     experience: 'Experience',
     projects: 'Projects',
+    hobbies: 'Hobbies',
     contact: 'Contact',
     mainLabel: 'Main',
     footerLabel: 'Footer',

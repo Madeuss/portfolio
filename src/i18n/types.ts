@@ -36,6 +36,7 @@ export type Dictionary = {
     about: string
     experience: string
     projects: string
+    hobbies: string
     contact: string
     mainLabel: string
     footerLabel: string

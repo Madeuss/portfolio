@@ -13,6 +13,7 @@ const es: Dictionary = {
     about: 'Sobre mí',
     experience: 'Experiencia',
     projects: 'Proyectos',
+    hobbies: 'Hobbies',
     contact: 'Contacto',
     mainLabel: 'Principal',
     footerLabel: 'Pie de página',

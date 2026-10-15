@@ -9,13 +9,14 @@ export const contact = {
 
 type NavKey = keyof Pick<
   Dictionary['nav'],
-  'home' | 'about' | 'experience' | 'projects' | 'contact'
+  'home' | 'about' | 'experience' | 'projects' | 'hobbies' | 'contact'
 >
 
 export const nav: { key: NavKey; href: string }[] = [
   { key: 'about', href: '#sobre' },
   { key: 'experience', href: '#experiencia' },
   { key: 'projects', href: '#projetos' },
+  { key: 'hobbies', href: '#hobbies' },
   { key: 'contact', href: '#contato' },
 ]
 
