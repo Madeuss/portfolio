@@ -1,11 +1,19 @@
-import { useId } from 'react';
+import { useId } from 'react'
 
 /** Bola de futebol "3D" desenhada à mão em SVG (original, sem licença de terceiros). */
 export default function SoccerBall3D({ size = 108 }: { size?: number }) {
-  const uid = useId().replace(/:/g, '');
-  const iris = `iris-${uid}`, face = `face-${uid}`, clip = `clip-${uid}`;
+  const uid = useId().replace(/:/g, '')
+  const iris = `iris-${uid}`,
+    face = `face-${uid}`,
+    clip = `clip-${uid}`
   return (
-    <svg width={size} height={size * (154 / 150)} viewBox="0 0 150 154" overflow="visible" aria-hidden="true">
+    <svg
+      width={size}
+      height={size * (154 / 150)}
+      viewBox="0 0 150 154"
+      overflow="visible"
+      aria-hidden="true"
+    >
       <defs>
         <linearGradient id={iris} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#8B6CFF" />
@@ -28,11 +36,20 @@ export default function SoccerBall3D({ size = 108 }: { size?: number }) {
       {/* só os gomos giram (--rot vem do hook de física) */}
       <g clipPath={`url(#${clip})`}>
         <g
-          style={{ transform: 'rotate(var(--rot, 0deg))', transformOrigin: '70px 70px' }}
-          fill="#2C2C33" stroke="#3E3E47" strokeWidth="2.5" strokeLinejoin="round"
+          style={{
+            transform: 'rotate(var(--rot, 0deg))',
+            transformOrigin: '70px 70px',
+          }}
+          fill="#2C2C33"
+          stroke="#3E3E47"
+          strokeWidth="2.5"
+          strokeLinejoin="round"
         >
           <path d="M70 46l22.8 16.6-8.7 26.8H55.9l-8.7-26.8z" />
-          <path d="M70 46V18M92.8 62.6l26.6-8.6M84.1 89.4l16.4 22.6M55.9 89.4l-16.4 22.6M47.2 62.6L20.6 54" fill="none" />
+          <path
+            d="M70 46V18M92.8 62.6l26.6-8.6M84.1 89.4l16.4 22.6M55.9 89.4l-16.4 22.6M47.2 62.6L20.6 54"
+            fill="none"
+          />
           <path d="M52 2l18 16 18-16 6-14H46z" />
           <path d="M119.4 54l10.6-22 18 6 2 30-14 12z" />
           <path d="M100.5 112l23.5 2 4 20-24 14-14-14z" />
@@ -40,8 +57,24 @@ export default function SoccerBall3D({ size = 108 }: { size?: number }) {
           <path d="M20.6 54L10 32l-18 6-2 30 14 12z" />
         </g>
       </g>
-      <ellipse cx="50" cy="36" rx="22" ry="11" transform="rotate(-28 50 36)" fill="#FFFFFF" opacity=".16" />
-      <circle cx="70" cy="70" r="63" fill="none" stroke="#FFFFFF" strokeOpacity=".08" strokeWidth="2" />
+      <ellipse
+        cx="50"
+        cy="36"
+        rx="22"
+        ry="11"
+        transform="rotate(-28 50 36)"
+        fill="#FFFFFF"
+        opacity=".16"
+      />
+      <circle
+        cx="70"
+        cy="70"
+        r="63"
+        fill="none"
+        stroke="#FFFFFF"
+        strokeOpacity=".08"
+        strokeWidth="2"
+      />
     </svg>
-  );
+  )
 }
