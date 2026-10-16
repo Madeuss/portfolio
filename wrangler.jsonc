@@ -1,0 +1,11 @@
+// Deploy no Cloudflare Workers (arquivos estáticos). O build roda `yarn build` e o
+// `npx wrangler deploy` publica a pasta dist. Cabeçalhos e cache ficam em public/_headers.
+{
+  // precisa ser igual ao nome do projeto no painel do Cloudflare
+  "name": "madeusdev",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+  },
+}

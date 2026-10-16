@@ -5,3 +5,6 @@ dist
 tsconfig.tsbuildinfo
 # GIFs originais (o site usa as versões .mp4 em public/images)
 media-src
+
+# cache local do wrangler
+.wrangler
