@@ -1,9 +1,9 @@
-import type { RefObject } from 'react'
+import { useState, type RefObject } from 'react'
 import { usePhysicsToys, type ToyConfig } from '../hooks/usePhysicsToys'
 import SoccerBall3D from './toys/SoccerBall3D'
 import GameController3D from './toys/GameController3D'
 
-const TOYS: ToyConfig[] = [
+const BASE: ToyConfig[] = [
   {
     id: 'ball',
     start: { x: 0.15, y: 0.42 },
@@ -24,12 +24,39 @@ const TOYS: ToyConfig[] = [
   },
 ]
 
+const BALL_SIZE = 108
+const PAD_WIDTH = 150
+
+// No celular os objetos ficam ~1/3 menores (e a física acompanha, via hw/hh/radius).
+const SMALL_SCREEN = '(max-width: 640px)'
+const MOBILE_SCALE = 0.66
+const MOBILE_START: Record<string, { x: number; y: number }> = {
+  ball: { x: 0.16, y: 0.5 },
+  pad: { x: 0.84, y: 0.66 },
+}
+
+function scaled(scale: number): ToyConfig[] {
+  if (scale === 1) return BASE
+  return BASE.map((c) => ({
+    ...c,
+    start: MOBILE_START[c.id] ?? c.start,
+    hw: c.hw * scale,
+    hh: c.hh * scale,
+    radius: c.radius * scale,
+  }))
+}
+
 /**
  * Objetos arremessáveis que vivem na página inteira (posicionados em relação a `pageRef`).
  * Decorativos, por isso aria-hidden. `hasInteracted` vai para o hero esconder a dica "pode arrastar".
  */
 export function useToys(pageRef: RefObject<HTMLElement>) {
-  const { register, bind, hasInteracted } = usePhysicsToys(pageRef, TOYS)
+  // Lido uma vez: os corpos da física são criados no primeiro render.
+  const [scale] = useState(() =>
+    window.matchMedia(SMALL_SCREEN).matches ? MOBILE_SCALE : 1,
+  )
+  const [configs] = useState(() => scaled(scale))
+  const { register, bind, hasInteracted } = usePhysicsToys(pageRef, configs)
 
   const toys = (
     <>
@@ -40,7 +67,7 @@ export function useToys(pageRef: RefObject<HTMLElement>) {
         {...bind('ball')}
       >
         <div className="toy__bob">
-          <SoccerBall3D size={108} />
+          <SoccerBall3D size={BALL_SIZE * scale} />
         </div>
       </div>
       <div
@@ -50,7 +77,7 @@ export function useToys(pageRef: RefObject<HTMLElement>) {
         {...bind('pad')}
       >
         <div className="toy__bob--slow">
-          <GameController3D width={150} />
+          <GameController3D width={PAD_WIDTH * scale} />
         </div>
       </div>
     </>

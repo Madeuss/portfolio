@@ -1044,6 +1044,78 @@ img {
 /* ==========================================================================
    Motion reduzido
    ========================================================================== */
+/* ==========================================================================
+   Celular: hero com layout próprio (nome em duas linhas, foto menor, header enxuto)
+   ========================================================================== */
+@media (max-width: 640px) {
+  .hero {
+    height: 100svh;
+    min-height: 620px;
+    max-height: 900px;
+  }
+  .hero__header {
+    flex-wrap: nowrap;
+    padding: 18px 20px;
+  }
+  .hero__nav {
+    display: none;
+  }
+  .hero__meta {
+    gap: 14px;
+  }
+  .hero__location {
+    font-size: 13px;
+  }
+  .hero__watermark {
+    top: 4svh;
+    font-size: 44vw;
+  }
+  .hero__name {
+    top: 14svh;
+    width: min-content;
+    font-size: 21vw;
+    line-height: 0.84;
+    text-align: center;
+    white-space: normal;
+  }
+  .hero__photo {
+    height: 74svh; /* a cabeça encosta no "SOUZA", como no desktop */
+    min-height: 0;
+    max-height: none;
+  }
+  .hero__halftone {
+    bottom: 10svh;
+  }
+  .hero__cta,
+  .hero__hint {
+    bottom: 64px;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 13px;
+  }
+  .hero__cta {
+    left: 20px;
+  }
+  .hero__hint {
+    right: 20px;
+  }
+  .hero__stackbar {
+    justify-content: center;
+    gap: 6px 16px;
+    padding: 16px 20px 18px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 420px) {
+  /* em telas estreitas a localização não cabe ao lado do PT / EN / ES */
+  .hero__location {
+    display: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
