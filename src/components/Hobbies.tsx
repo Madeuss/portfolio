@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type CSSProperties } from 'react'
 import { hobbies, type Hobby, type HobbyIcon } from '../data/content'
 import { useI18n } from '../i18n/I18nProvider'
 import {
@@ -73,7 +73,14 @@ function HobbyCard({ hobby }: { hobby: Hobby }) {
         </span>
 
         <span className="fut__face fut__face--back" aria-hidden={!flipped}>
-          <span className="fut__media">
+          <span
+            className="fut__media"
+            style={
+              hobby.mediaY
+                ? ({ '--media-y': hobby.mediaY } as CSSProperties)
+                : undefined
+            }
+          >
             {hobby.media ? (
               seen && <Media src={hobby.media} />
             ) : (

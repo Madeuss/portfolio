@@ -121,6 +121,8 @@ export type Hobby = {
   /** valores dos 6 atributos (de brincadeira) */
   stats: number[]
   media?: string
+  /** enquadramento vertical da mídia no verso (0% = topo, 100% = base) */
+  mediaY?: string
   club?: boolean // mostra o escudo na frente da carta, como o clube nas cartas do FUT
 }
 
@@ -131,6 +133,7 @@ export const hobbies: Hobby[] = [
     icon: 'ball',
     stats: [84, 86, 82, 88, 99, 99],
     media: '/images/soccer_funny_fail.mp4',
+    mediaY: '60%', // mostra a bola, que fica na base do vídeo
     club: true,
   },
   {
@@ -153,6 +156,7 @@ export const hobbies: Hobby[] = [
     icon: 'glove',
     stats: [84, 83, 80, 78, 85, 88],
     media: '/images/muay_thai_03.mp4',
+    mediaY: '10%', // mostra a bola, que fica na base do vídeo
   },
   {
     id: 'programar',

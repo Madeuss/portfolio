@@ -822,6 +822,8 @@ img {
   font-weight: 800;
 }
 .fut__media {
+  position: relative;
+  margin-top: 8px;
   display: grid;
   place-items: center;
   aspect-ratio: 4 / 3;
@@ -829,13 +831,17 @@ img {
   border-radius: 12px;
   background: rgba(250, 247, 243, 0.06);
 }
+/* Absoluto para preencher exatamente a moldura: num item de grid o height: 100%
+   não resolve, a mídia ficava no tamanho natural e o object-position não agia. */
 .fut__media img,
 .fut__media video {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 50% = centralizado; valores maiores sobem o conteúdo dentro da moldura */
-  object-position: 50% var(--media-y, 70%);
+  /* eixo Y: 0% = mostra o topo do vídeo, 100% = mostra a base (por carta: mediaY) */
+  object-position: 99% var(--media-y, 70%);
 }
 .fut__placeholder {
   font-size: 13px;
