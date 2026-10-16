@@ -3,7 +3,7 @@ import type { Dictionary } from './types'
 const pt: Dictionary = {
   meta: {
     htmlLang: 'pt-BR',
-    title: 'Mateus Souza — Software Engineer',
+    title: 'Madeus',
     description:
       'Portfólio de Mateus Souza, engenheiro front-end e fullstack em São Paulo.',
   },
