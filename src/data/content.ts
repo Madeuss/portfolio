@@ -129,7 +129,7 @@ export type Hobby = {
 export const hobbies: Hobby[] = [
   {
     id: 'futebol',
-    overall: 88,
+    overall: 99,
     icon: 'ball',
     stats: [84, 86, 82, 88, 99, 99],
     media: '/images/soccer_funny_fail.mp4',
@@ -138,21 +138,21 @@ export const hobbies: Hobby[] = [
   },
   {
     id: 'academia',
-    overall: 84,
+    overall: 88,
     icon: 'dumbbell',
     stats: [86, 80, 90, 82, 88, 75],
     media: '/images/gym.mp4',
   },
   {
     id: 'videogame',
-    overall: 87,
+    overall: 94,
     icon: 'gamepad',
     stats: [89, 85, 84, 90, 70, 99],
     media: '/images/game_01.gif',
   },
   {
     id: 'muaythai',
-    overall: 82,
+    overall: 77,
     icon: 'glove',
     stats: [84, 83, 80, 78, 85, 88],
     media: '/images/muay_thai_03.mp4',

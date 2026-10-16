@@ -129,14 +129,14 @@ const es: Dictionary = {
         pos: 'DEL',
         // ritmo, tiro, pase, regate, garra, hincha
         attrs: ['RIT', 'TIR', 'PAS', 'REG', 'GAR', 'HIN'],
-        quote: 'Juego, miro y sufro. Hincha del Corinthians desde siempre.',
+        quote: 'Vai Corinthians!',
       },
       academia: {
         name: 'Gimnasio',
         pos: 'MUS',
         // fuerza, resistencia, constancia, técnica, disciplina, pre-entreno
         attrs: ['FUE', 'RES', 'CON', 'TÉC', 'DIS', 'PRE'],
-        quote: 'El día de pierna no se salta.',
+        quote: 'Light weight, baby!',
       },
       videogame: {
         name: 'Videojuegos',

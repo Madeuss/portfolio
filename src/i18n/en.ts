@@ -129,14 +129,14 @@ const en: Dictionary = {
         pos: 'ST',
         // pace, shooting, passing, dribbling, grit, fandom
         attrs: ['PAC', 'SHO', 'PAS', 'DRI', 'GRT', 'FAN'],
-        quote: 'I play, I watch, I suffer. Corinthians fan since forever.',
+        quote: 'Vai Corinthians!',
       },
       academia: {
         name: 'Gym',
         pos: 'LFT',
         // strength, endurance, consistency, technique, discipline, pre-workout
         attrs: ['STR', 'END', 'CON', 'TEC', 'DIS', 'PRE'],
-        quote: 'Never skip leg day.',
+        quote: 'Light weight, baby!',
       },
       videogame: {
         name: 'Video games',
