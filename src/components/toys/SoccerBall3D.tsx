@@ -16,9 +16,9 @@ export default function SoccerBall3D({ size = 108 }: { size?: number }) {
     >
       <defs>
         <linearGradient id={iris} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#8B6CFF" />
+          <stop offset="0" stopColor="#9DB6FF" />
           <stop offset=".45" stopColor="#D9D9E3" />
-          <stop offset=".7" stopColor="#5A47E0" />
+          <stop offset=".7" stopColor="#0A3FB8" />
           <stop offset="1" stopColor="#2B2B33" />
         </linearGradient>
         <radialGradient id={face} cx=".36" cy=".3" r=".8">

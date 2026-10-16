@@ -24,9 +24,9 @@ export default function GameController3D({ width = 150 }: { width?: number }) {
     >
       <defs>
         <linearGradient id={iris} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#8B6CFF" />
+          <stop offset="0" stopColor="#9DB6FF" />
           <stop offset=".4" stopColor="#E0E0EA" />
-          <stop offset=".68" stopColor="#5A47E0" />
+          <stop offset=".68" stopColor="#0A3FB8" />
           <stop offset="1" stopColor="#26262E" />
         </linearGradient>
         <linearGradient id={face} x1="0" y1="0" x2="0" y2="1">
@@ -64,7 +64,7 @@ export default function GameController3D({ width = 150 }: { width?: number }) {
           cy="46"
           r="8"
           fill="#2E2E36"
-          stroke="#8B6CFF"
+          stroke="#9DB6FF"
           strokeWidth="2"
         />
         <circle

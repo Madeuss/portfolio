@@ -17,8 +17,8 @@
   --footer-ink: #faf7f3;
   --footer-muted: #a8a49c;
 
-  --iris-1: #8b6cff; /* lateral iridescente dos objetos 3D */
-  --iris-2: #5a47e0;
+  --iris-1: #9db6ff; /* lateral iridescente dos objetos 3D */
+  --iris-2: #0a3fb8;
 
   --font: 'Archivo', system-ui, sans-serif;
   --gutter: clamp(20px, 7vw, 104px);
@@ -355,7 +355,7 @@ img {
 }
 .toy svg {
   display: block;
-  filter: drop-shadow(0 22px 26px rgba(20, 22, 28, 0.28));
+  filter: drop-shadow(0 22px 26px rgba(10, 63, 184, 0.24));
 }
 .toy__bob {
   animation: bob 5.5s ease-in-out infinite;
