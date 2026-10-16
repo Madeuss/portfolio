@@ -32,13 +32,13 @@ const pt: Dictionary = {
       '.',
     ],
     paragraphs: [
-      'Sou engenheiro front-end e fullstack, com cerca de 6 anos de experiência. Nos últimos 4, faço parte do time que constrói o console de clientes de uma nuvem pública brasileira.',
-      'Trabalho com React, Next.js, TypeScript e micro-frontends, e não paro na interface: também entrego o BFF em Python, os contratos OpenAPI, o CI/CD e a configuração de gateway.',
+      'Sou engenheiro front-end e fullstack, com mais de 6 anos de experiência. Nos últimos 4, faço parte do time que constrói o console de clientes de uma nuvem pública brasileira — máquinas virtuais, Kubernetes, storage, VPC, IAM e billing —, onde puxo decisões de arquitetura front-end: micro-frontends, pacotes publicados de forma independente e migrações de plataforma como Next.js 16 e React 19.',
+      'Não paro no navegador: entrego BFFs em Python (FastAPI), fluxos de OAuth 2.0 e SSO, pipelines de CI/CD no GitLab e configuração de Kubernetes (ArgoCD) e Kong API Gateway em múltiplas regiões. Também escrevo ADRs e documentos técnicos, reviso código entre times e mentoro devs em testes e arquitetura front-end.',
     ],
     stats: [
       { value: '6+', label: 'anos de experiência' },
-      { value: '4', label: 'anos em um console de nuvem pública' },
-      { value: '[N]', label: '[SEU NÚMERO: produtos, telas, deploys…]' }, // TODO
+      { value: '4+', label: 'anos em um console de nuvem pública' },
+      { value: '1', label: 'interclasse vencida' },
     ],
   },
   experience: {
@@ -47,22 +47,28 @@ const pt: Dictionary = {
     jobs: [
       {
         period: '05/2022 — atual',
-        // Decisão em aberto: citar ou não a Magalu Cloud pelo nome.
         company: 'Luizalabs · Magalu Cloud',
         role: 'Senior Front-End / Fullstack',
-        desc: 'Faço parte do time que constrói o console de clientes da nuvem pública: React, Next.js, TypeScript e micro-frontends, além de BFF em Python, contratos OpenAPI, CI/CD e gateway.',
+        desc: 'Faço parte do time que constrói o console de clientes da nuvem pública, do front-end em React e Next.js ao BFF em Python e à configuração de plataforma.',
+        highlights: [
+          'Liderei a migração da plataforma para Next.js 16 e React 19 em um monorepo TypeScript de 7 pacotes, sem downtime para os clientes.',
+          'Conduzi a migração de monorepo para polyrepo: micro-frontends viraram pacotes versionados em um registry npm privado, e cada time passou a lançar seu produto de forma independente.',
+          'Construí o produto de IAM de ponta a ponta — membros, papéis, permissões, grupos e RBAC por projeto —, do front-end em React aos endpoints do BFF em FastAPI.',
+          'Implantei um fluxo spec-first: specs OpenAPI geram clientes tipados compartilhados entre os produtos, acabando com tipos escritos à mão e divergência de contrato.',
+          'Configuração de plataforma em múltiplas regiões: rotas no Kong API Gateway (400+ mudanças revisadas) e deploys no Kubernetes via ArgoCD.',
+        ],
       },
       {
-        period: '[PERÍODO]',
-        company: '[EMPRESA ANTERIOR]',
-        role: '[CARGO]',
-        desc: '[O que você construiu lá, em uma ou duas frases.]',
+        period: '08/2024 — 02/2025',
+        company: 'Jinboo',
+        role: 'Front-End Developer · Contrato',
+        desc: 'Contrato em paralelo: novas features nas aplicações web e mobile nativa do produto OBT, estabilização de bugs no front-end e correção de defeitos de API no back-end em Go.',
       },
       {
-        period: '[PERÍODO]',
-        company: '[EMPRESA ANTERIOR]',
-        role: '[CARGO]',
-        desc: '[O que você construiu lá, em uma ou duas frases.]',
+        period: '07/2020 — 05/2022',
+        company: 'AutoSeg',
+        role: 'Front-End Developer · Trainee → Júnior',
+        desc: 'Landing pages e interfaces de produto do conceito à produção, refatoração de páginas legadas em JavaScript para componentes React e TypeScript, integração com o back-end em Ruby on Rails e os primeiros testes automatizados do código.',
       },
     ],
   },
@@ -100,7 +106,16 @@ const pt: Dictionary = {
       },
     ],
   },
-  stack: { label: '/Stack' },
+  stack: {
+    label: '/Stack',
+    groups: {
+      frontend: 'Front-end',
+      backend: 'Back-end & APIs',
+      testing: 'Testes',
+      infra: 'Infra & DevOps',
+      observability: 'Observabilidade',
+    },
+  },
   hobbies: {
     title: 'Fora do código',
     label: '/Hobbies',

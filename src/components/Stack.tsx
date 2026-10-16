@@ -10,8 +10,8 @@ export default function Stack() {
         <p className="label stack__label">{t.stack.label}</p>
         <div className="stack__groups">
           {stack.map((g) => (
-            <div className="stack__group" key={g.title}>
-              <span className="stack__title">{g.title}</span>
+            <div className="stack__group" key={g.id}>
+              <span className="stack__title">{t.stack.groups[g.id]}</span>
               <ul className="stack__chips">
                 {g.items.map((it) => (
                   <li className="chip" key={it}>

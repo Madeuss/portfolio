@@ -38,8 +38,12 @@ export default function Footer() {
           <h3>{t.footer.contact}</h3>
           <div className="footer__contact">
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            <a href={contact.linkedin}>LinkedIn ↗</a>
-            <a href={contact.github}>GitHub ↗</a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+            <a href={contact.github} target="_blank" rel="noreferrer">
+              GitHub ↗
+            </a>
           </div>
         </div>
       </div>

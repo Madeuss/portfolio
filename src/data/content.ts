@@ -1,10 +1,10 @@
 // Dados do site que NÃO mudam com o idioma. Todo o texto traduzível fica em src/i18n/{pt,en,es}.ts.
-import type { Dictionary, HobbyId } from '../i18n/types'
+import type { Dictionary, HobbyId, StackGroupId } from '../i18n/types'
 
 export const contact = {
-  email: '[SEU EMAIL]', // TODO
-  linkedin: '#linkedin', // TODO
-  github: '#github', // TODO
+  email: 'mateus1two3@gmail.com',
+  linkedin: 'https://linkedin.com/in/mateusdevsouza',
+  github: 'https://github.com/madeuss',
 }
 
 type NavKey = keyof Pick<
@@ -25,13 +25,14 @@ export const footerLinks: { key: NavKey; href: string }[] = [
   ...nav,
 ]
 
+// Faixa sob a hero: um pouco de cada camada (front, back, infra).
 export const heroStack = [
   'React',
-  'Next.js',
-  'TypeScript',
   'Micro-frontends',
   'Python',
-  'OpenAPI',
+  'Kubernetes',
+  'Docker',
+  'API Gateway',
 ]
 
 /** Visual de cada projeto, na mesma ordem de `projects.items` nos dicionários. */
@@ -42,13 +43,60 @@ export const projectMeta: { tint?: string; image?: string; href?: string }[] = [
   {},
 ]
 
-export const stack = [
+// Títulos dos grupos ficam nos dicionários (stack.groups).
+export const stack: { id: StackGroupId; items: string[] }[] = [
   {
-    title: 'Front-end',
-    items: ['React', 'Next.js', 'TypeScript', 'Micro-frontends'],
+    id: 'frontend',
+    items: [
+      'React',
+      'Next.js',
+      'TypeScript',
+      'Micro-frontends',
+      'Astro',
+      'Context API',
+      'Tailwind CSS',
+      'Storybook',
+      'Design Systems',
+      'Accessibility (WCAG)',
+    ],
   },
-  { title: 'Back-end', items: ['Python (BFF)', 'OpenAPI'] },
-  { title: 'Infra', items: ['CI/CD', 'API Gateway'] },
+  {
+    id: 'backend',
+    items: [
+      'Python',
+      'FastAPI',
+      'Node.js',
+      'OpenAPI (spec-first)',
+      'BFF',
+      'OAuth 2.0 / OIDC',
+      'Redis',
+    ],
+  },
+  {
+    id: 'testing',
+    items: [
+      'Vitest',
+      'Jest',
+      'Testing Library',
+      'Playwright',
+      'Cypress',
+      'MSW',
+    ],
+  },
+  {
+    id: 'infra',
+    items: [
+      'GitLab CI/CD',
+      'Docker',
+      'Kubernetes',
+      'ArgoCD',
+      'Kong API Gateway',
+    ],
+  },
+  {
+    id: 'observability',
+    items: ['OpenSearch', 'Sentry', 'Prometheus', 'PostHog'],
+  },
 ]
 
 // Escudo do time do coração (imagem do Mat; não desenhamos logos). SVG monocromático,

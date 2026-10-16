@@ -6,6 +6,8 @@ export type Job = {
   company: string
   role: string
   desc: string
+  /** conquistas em destaque (opcional) */
+  highlights?: string[]
 }
 export type Project = {
   name: string
@@ -14,6 +16,8 @@ export type Project = {
   desc: string
   placeholder: string
 }
+export type StackGroupId =
+  'frontend' | 'backend' | 'testing' | 'infra' | 'observability'
 export type HobbyId =
   'futebol' | 'academia' | 'videogame' | 'muaythai' | 'programar'
 /** Textos de uma carta de hobby. `attrs` segue a ordem dos valores em content.ts (6 itens). */
@@ -51,7 +55,7 @@ export type Dictionary = {
   }
   experience: { title: string; label: string; jobs: Job[] }
   projects: { title: string; label: string; items: Project[] }
-  stack: { label: string }
+  stack: { label: string; groups: Record<StackGroupId, string> }
   hobbies: {
     title: string
     label: string

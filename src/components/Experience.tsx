@@ -17,6 +17,13 @@ export default function Experience() {
               <div className="job__main">
                 <span className="job__company">{j.company}</span>
                 <span className="job__desc">{j.desc}</span>
+                {j.highlights && (
+                  <ul className="job__highlights">
+                    {j.highlights.map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
               <span className="job__role">
                 {j.role}
