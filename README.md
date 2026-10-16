@@ -2,6 +2,8 @@
 
 Personal portfolio of Mateus Souza, a front-end and fullstack engineer based in São Paulo, Brazil.
 
+**Live at [madeusdev.com](https://madeusdev.com)**
+
 ![Hero section: "MATEUS SOUZA" in blue behind a cut-out photo of Mateus wearing a striped MADEUS 9 shirt, with a throwable football and game controller floating beside him](.github/preview.webp)
 
 ## Highlights
@@ -14,15 +16,15 @@ Personal portfolio of Mateus Souza, a front-end and fullstack engineer based in 
 
 ## Stack
 
-Vite · React 18 · TypeScript · plain CSS (design tokens in `:root`, no framework) · [Phosphor Icons](https://phosphoricons.com/) · Prettier
+Vite · React 18 · TypeScript · plain CSS (design tokens in `:root`, no framework) · [Phosphor Icons](https://phosphoricons.com/) · Prettier · Yarn 1 · hosted on Cloudflare Pages
 
 ## Getting started
 
 ```bash
-npm install
-npm run dev      # http://localhost:3000
-npm run build    # type-check + production build
-npm run format   # prettier
+yarn            # install (Node 22, see .node-version)
+yarn dev        # http://localhost:3000
+yarn build      # type-check + production build
+yarn format     # prettier
 ```
 
 ## Project structure
@@ -39,6 +41,10 @@ public/images/             photos, videos and project screenshots
 ```
 
 To change any text, edit the dictionaries in `src/i18n/`. To change links, stack chips, card stats or media, edit `src/data/content.ts`.
+
+## Deploy
+
+Cloudflare Pages builds every push to `main` (`yarn build`, output `dist`). Security headers and caching rules live in [`public/_headers`](public/_headers).
 
 ## Adding a GIF
 
