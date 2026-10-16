@@ -46,7 +46,11 @@ export const projectMeta: { tint?: string; image?: string; href?: string }[] = [
     image: '/images/covid-tracker.webp',
     href: 'https://github.com/Madeuss/Covid-19-Tracker',
   },
-  {},
+  // TODO: trocar pelo Portfólio 3D quando sair
+  {
+    image: '/images/portfolio-hero.webp',
+    href: 'https://github.com/Madeuss/portfolio',
+  },
 ]
 
 // Títulos dos grupos ficam nos dicionários (stack.groups).
