@@ -175,6 +175,12 @@ const es: Dictionary = {
     contact: '/Contacto',
     crest: 'Escudo del Corinthians',
   },
+  notFound: {
+    title: '404 · Madeus',
+    heading: 'Balón fuera.',
+    text: 'Esta página no existe, o se fue al banquillo. Pero el balón sigue en juego: dale una patada.',
+    cta: 'Volver al inicio',
+  },
 }
 
 export default es

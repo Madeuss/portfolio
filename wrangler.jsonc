@@ -6,6 +6,7 @@
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "single-page-application",
+    // caminho inexistente → dist/404.html com status 404
+    "not_found_handling": "404-page",
   },
 }

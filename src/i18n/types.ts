@@ -73,4 +73,11 @@ export type Dictionary = {
     note: string
   }
   footer: { claim: string[]; links: string; contact: string; crest: string }
+  notFound: {
+    /** título da aba */
+    title: string
+    heading: string
+    text: string
+    cta: string
+  }
 }

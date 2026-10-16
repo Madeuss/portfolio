@@ -176,6 +176,12 @@ const en: Dictionary = {
     contact: '/Contact',
     crest: 'Corinthians crest',
   },
+  notFound: {
+    title: '404 · Madeus',
+    heading: 'Out of bounds.',
+    text: "This page doesn't exist, or it got benched. The ball is still in play, though: go ahead and kick it.",
+    cta: 'Back to home',
+  },
 }
 
 export default en

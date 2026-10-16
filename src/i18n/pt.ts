@@ -168,6 +168,12 @@ const pt: Dictionary = {
     contact: '/Contato',
     crest: 'Escudo do Corinthians',
   },
+  notFound: {
+    title: '404 · Madeus',
+    heading: 'Bola fora.',
+    text: 'Essa página não existe, ou foi pro banco. Mas a bola continua em jogo: pode chutar.',
+    cta: 'Voltar pro início',
+  },
 }
 
 export default pt

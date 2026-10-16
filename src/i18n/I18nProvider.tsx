@@ -34,18 +34,25 @@ type I18n = { locale: Locale; setLocale: (l: Locale) => void; t: Dictionary }
 
 const I18nContext = createContext<I18n | null>(null)
 
-export function I18nProvider({ children }: { children: ReactNode }) {
+export function I18nProvider({
+  children,
+  pageTitle = (t) => t.meta.title,
+}: {
+  children: ReactNode
+  /** título da aba para esta página (padrão: meta.title) */
+  pageTitle?: (t: Dictionary) => string
+}) {
   const [locale, setLocaleState] = useState<Locale>(initialLocale)
   const t = DICTIONARIES[locale]
 
   // <html lang>, título e description acompanham o idioma
   useEffect(() => {
     document.documentElement.lang = t.meta.htmlLang
-    document.title = t.meta.title
+    document.title = pageTitle(t)
     document
       .querySelector('meta[name="description"]')
       ?.setAttribute('content', t.meta.description)
-  }, [t])
+  }, [t, pageTitle])
 
   const value = useMemo<I18n>(
     () => ({

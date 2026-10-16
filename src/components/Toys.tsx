@@ -35,11 +35,18 @@ const MOBILE_START: Record<string, { x: number; y: number }> = {
   pad: { x: 0.84, y: 0.66 },
 }
 
-function scaled(scale: number): ToyConfig[] {
-  if (scale === 1) return BASE
+type Start = Record<string, { x: number; y: number }>
+
+/** Posições iniciais por página (sobrepõem as padrão), separadas por desktop e celular. */
+export type ToyStarts = { desktop?: Start; mobile?: Start }
+
+function scaled(scale: number, starts: ToyStarts = {}): ToyConfig[] {
+  const mobile = scale !== 1
+  const own = mobile ? starts.mobile : starts.desktop
+  const fallback: Start = mobile ? MOBILE_START : {}
   return BASE.map((c) => ({
     ...c,
-    start: MOBILE_START[c.id] ?? c.start,
+    start: own?.[c.id] ?? fallback[c.id] ?? c.start,
     hw: c.hw * scale,
     hh: c.hh * scale,
     radius: c.radius * scale,
@@ -50,12 +57,12 @@ function scaled(scale: number): ToyConfig[] {
  * Objetos arremessáveis que vivem na página inteira (posicionados em relação a `pageRef`).
  * Decorativos, por isso aria-hidden. `hasInteracted` vai para o hero esconder a dica "pode arrastar".
  */
-export function useToys(pageRef: RefObject<HTMLElement>) {
+export function useToys(pageRef: RefObject<HTMLElement>, starts?: ToyStarts) {
   // Lido uma vez: os corpos da física são criados no primeiro render.
   const [scale] = useState(() =>
     window.matchMedia(SMALL_SCREEN).matches ? MOBILE_SCALE : 1,
   )
-  const [configs] = useState(() => scaled(scale))
+  const [configs] = useState(() => scaled(scale, starts))
   const { register, bind, hasInteracted } = usePhysicsToys(pageRef, configs)
 
   const toys = (

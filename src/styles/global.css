@@ -1045,6 +1045,72 @@ img {
    Motion reduzido
    ========================================================================== */
 /* ==========================================================================
+   Página 404
+   ========================================================================== */
+.nf {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+}
+.nf__watermark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 900;
+  font-size: 46vw;
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--bg-soft);
+  pointer-events: none;
+  user-select: none;
+}
+.nf__header {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px var(--gutter);
+  font-size: 14px;
+}
+.nf__body {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  width: 100%;
+  max-width: calc(var(--container) + 2 * var(--gutter));
+  margin: 0 auto;
+  padding: 0 var(--gutter) 12svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.nf__title {
+  margin: 0;
+  font-size: clamp(56px, 11vw, 168px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+  color: var(--accent);
+}
+.nf__text {
+  margin: 0;
+  max-width: 34ch;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.nf__button {
+  align-self: flex-start;
+  padding: 0 28px 0 12px;
+}
+
+/* ==========================================================================
    Celular: hero com layout próprio (nome em duas linhas, foto menor, header enxuto)
    ========================================================================== */
 @media (max-width: 640px) {
@@ -1085,6 +1151,10 @@ img {
   }
   .hero__halftone {
     bottom: 10svh;
+  }
+  .nf__watermark {
+    top: 56%;
+    font-size: 64vw;
   }
   .hero__cta,
   .hero__hint {
