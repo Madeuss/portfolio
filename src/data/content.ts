@@ -37,9 +37,15 @@ export const heroStack = [
 
 /** Visual de cada projeto, na mesma ordem de `projects.items` nos dicionários. */
 export const projectMeta: { tint?: string; image?: string; href?: string }[] = [
-  { tint: '#e3e8f7' }, // TODO: image (print do console)
-  {},
-  {},
+  { tint: '#e3e8f7', image: '/images/console-home.webp' },
+  {
+    image: '/images/firenze.webp',
+    href: 'https://github.com/Madeuss/firenze',
+  },
+  {
+    image: '/images/covid-tracker.webp',
+    href: 'https://github.com/Madeuss/Covid-19-Tracker',
+  },
   {},
 ]
 

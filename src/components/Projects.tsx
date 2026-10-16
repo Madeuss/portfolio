@@ -14,8 +14,14 @@ export default function Projects() {
         <div className="projects__grid">
           {t.projects.items.map((p, i) => {
             const meta = projectMeta[i] ?? {}
+            const external = meta.href?.startsWith('http')
             return (
-              <a key={i} href={meta.href ?? '#projetos'} className="card">
+              <a
+                key={i}
+                href={meta.href ?? '#projetos'}
+                {...(external && { target: '_blank', rel: 'noreferrer' })}
+                className="card"
+              >
                 <div className="card__media">
                   <div
                     className="card__shot"

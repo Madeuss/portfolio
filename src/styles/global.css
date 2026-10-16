@@ -563,6 +563,10 @@ img {
   );
   transition: transform 0.6s var(--ease-out);
 }
+/* listras só no placeholder; com imagem, fundo liso (PNGs com transparência) */
+.card__shot:has(img) {
+  background-image: none;
+}
 .card:hover .card__shot {
   transform: scale(1.03);
 }
