@@ -1,5 +1,5 @@
 dist
 node_modules
 media-src
-package-lock.json
+yarn.lock
 public
