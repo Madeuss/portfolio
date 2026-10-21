@@ -2,7 +2,7 @@
 import type { Dictionary, HobbyId, StackGroupId } from '../i18n/types'
 
 export const contact = {
-  email: 'mateus1two3@gmail.com',
+  email: 'contato@madeusdev.com',
   linkedin: 'https://linkedin.com/in/mateusdevsouza',
   github: 'https://github.com/madeuss',
 }
