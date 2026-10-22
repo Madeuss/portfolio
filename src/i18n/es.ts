@@ -101,9 +101,9 @@ const es: Dictionary = {
       {
         name: 'Portafolio 3D',
         year: '2026',
-        tag: 'En construcción',
+        tag: 'Sitio 3D',
         placeholder: '[PRINT DO 3D]',
-        desc: 'Mi próximo portafolio, en construcción: un sitio jugable donde recorres la casa de mis sueños y abres proyectos, stack y contacto interactuando con los objetos. React Three Fiber, física con Rapier y personaje controlable.',
+        desc: 'Mi portafolio jugable: recorre la casa de mis sueños y abre proyectos, stack y contacto interactuando con los objetos. React Three Fiber, física con Rapier y personaje controlable.',
       },
     ],
   },

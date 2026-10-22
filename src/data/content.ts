@@ -46,9 +46,9 @@ export const projectMeta: { tint?: string; image?: string; href?: string }[] = [
     image: '/images/covid-tracker.webp',
     href: 'https://github.com/Madeuss/Covid-19-Tracker',
   },
-  // Portfólio 3D jogável, em construção (subdomínio próprio)
+  // Portfólio 3D jogável (subdomínio próprio)
   {
-    image: '/images/portfolio-3d.webp',
+    image: '/images/portfolio-3d-v2.webp',
     href: 'https://3d.madeusdev.com',
   },
 ]

@@ -101,9 +101,9 @@ const en: Dictionary = {
       {
         name: '3D Portfolio',
         year: '2026',
-        tag: 'In progress',
+        tag: '3D site',
         placeholder: '[PRINT DO 3D]',
-        desc: 'My next portfolio, in progress: a playable site where you walk around my dream house and open projects, stack and contact by interacting with the objects. React Three Fiber, Rapier physics and a controllable character.',
+        desc: 'My playable portfolio: walk around my dream house and open projects, stack and contact by interacting with the objects. React Three Fiber, Rapier physics and a controllable character.',
       },
     ],
   },
